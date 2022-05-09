@@ -12,7 +12,7 @@ function Edit(){
 
   useEffect(() => {
     const AxiosDetail = async () => {
-      let Response = await axios.get(`http://localhost:5000/productz/${id}`);
+      let Response = await axios.get(`https://crudmernbackend.herokuapp.com/detail/${id}`);
       setname(Response.data[0].name);
       setprice(Response.data[0].price);
       setstock(Response.data[0].stock);
@@ -27,7 +27,7 @@ function Edit(){
     e.preventDefault();
 
     try {
-      await axios.patch(`http://localhost:5000/productz/${id}`, {
+      await axios.patch(`https://crudmernbackend.herokuapp.com/update/${id}`, {
         name: name,
         stock: stock,
         price: price,

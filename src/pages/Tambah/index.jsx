@@ -10,7 +10,7 @@ function Tambah() {
   const [status, setstatus] = useState("");
 
   const addProduct = async (e) => {
-    let url = "http://localhost:5000/productz";
+    let url = "https://crudmernbackend.herokuapp.com/productz/";
     e.preventDefault();
     try {
       await axios.post(url, {

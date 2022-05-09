@@ -12,7 +12,7 @@ function Detail() {
   useEffect(() => {
     const AxiosDetail = async () => {
       try {
-        let Response = await axios.get(`http://localhost:5000/productz/${id}`);
+        let Response = await axios.get(`https://crudmernbackend.herokuapp.com/detail/${id}`);
         setDetail(Response.data);
       } catch (error) {
         console.log(error);

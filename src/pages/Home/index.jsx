@@ -12,7 +12,7 @@ function Home() {
     AxiosData();
   }, []);
   const AxiosData = async () => {
-    let Response = await axios.get(`http://localhost:5000/productz/`);
+    let Response = await axios.get(`https://crudmernbackend.herokuapp.com/`);
     if (!Response) {
       seterror(true);
     } else {
@@ -23,7 +23,9 @@ function Home() {
   };
   const AxiosDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/productz/${id}`);
+      await axios.delete(
+        `https://crudmernbackend.herokuapp.com/delete/${id}`
+      );
 
       setTimeout(AxiosData, 1000);
       alert("Berhasil Delete Data");
@@ -32,7 +34,9 @@ function Home() {
     }
   };
   const AxiosSearch = async () => {
-    let Response = await axios.get(`http://localhost:5000/productz/${search}`);
+    let Response = await axios.get(
+      `https://crudmernbackend.herokuapp.com/productz/${search}`
+    );
     if (!Response) {
       seterror(true);
     } else {
